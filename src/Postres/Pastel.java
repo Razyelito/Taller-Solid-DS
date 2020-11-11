@@ -35,4 +35,8 @@ public class Pastel extends Postre{
         return "Precio Final: $ " + calcularPrecioFinal();
     }
     
+    public double getprecioParcial(){
+        return precioParcial;
+    }
+    
 }

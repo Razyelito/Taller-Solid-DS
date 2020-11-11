@@ -34,4 +34,8 @@ public class Helado extends Postre{
     public String showPrecioFinal(){
         return "Precio Final: $ " + calcularPrecioFinal();
     }
+    
+    public double getprecioParcial(){
+        return precioParcial;
+    }
 }

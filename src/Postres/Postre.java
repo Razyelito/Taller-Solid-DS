@@ -39,4 +39,6 @@ public abstract class Postre {
     public static void quitarAderezo(Postre postre,Aderezo aderezo){
         postre.getAderezos().remove(aderezo);
     }
+    
+    public abstract double getprecioParcial();
 }
