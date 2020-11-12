@@ -21,7 +21,9 @@ public class Sistema {
         LecheEntera leche = new LecheDeslactosada();
         ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
         Frutilla frutilla = new Frutilla();
+        frutilla.setNombre("Frutilla");
         Crema crema = new Crema();
+        crema.setNombre("Crema");
         
         
         // Producir Helado
