@@ -20,20 +20,13 @@ public class Helado extends Postre{
         this.precioParcial = 7.85;
     }
     
-    public double calcularPrecioFinal(){
-        double precioFinal;
-        precioFinal=(precioParcial+(precioParcial*0.12))+(super.getAderezos().size()*0.50);
-        return precioFinal;
-    }
 
     @Override
     public String toString() {
         return "Helado{" + "sabor=" + super.getSabor() + ", precioParcial=" + precioParcial + ", aderezos=" + super.getAderezos() + '}';
     }
     
-    public String showPrecioFinal(){
-        return "Precio Final: $ " + calcularPrecioFinal();
-    }
+ 
     
     public double getprecioParcial(){
         return precioParcial;

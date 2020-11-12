@@ -24,7 +24,7 @@ public class Sistema {
         frutilla.setNombre("Frutilla");
         Crema crema = new Crema();
         crema.setNombre("Crema");
-        
+        ManejadorDePrecio mnp = new ManejadorDePrecio();
         
         // Producir Helado
         Helado helado_vainilla = new Helado("Vainilla");
@@ -32,7 +32,9 @@ public class Sistema {
         Helado.anadirAderezo(helado_vainilla, frutilla);
         System.out.println(helado_vainilla);
         mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
-        System.out.println(helado_vainilla.showPrecioFinal());
+        double pF = mnp.calcularPrecioFinal(helado_vainilla);
+        String mensajePrecio = mnp.showPrecioFinal(helado_vainilla);
+        System.out.println(mensajePrecio);
         
         // Producir Pastel
         Pastel pastel_chocolate = new Pastel("Chocolate");
@@ -40,7 +42,10 @@ public class Sistema {
         Pastel.anadirAderezo(pastel_chocolate, frutilla);
         System.out.println(pastel_chocolate);
         mnj_leche.cambiarTipoLeche(leche, pastel_chocolate);
-        System.out.println(pastel_chocolate.showPrecioFinal());
+        double pF2 = mnp.calcularPrecioFinal(pastel_chocolate);
+        String mensajePrecio2 = mnp.showPrecioFinal(pastel_chocolate);
+        System.out.println(mensajePrecio2);
+        
         
         
     }
