@@ -17,7 +17,7 @@ public class Sistema {
     public static void main(String [ ] args){
         // Producir un helado de vainilla y una torta de chocolate, 
         // a ambos agregarles CREMA y FRUTILLAS
-        // y cambiar el tipo de leche por Leche Descremada
+        // y cambiar el tipo de leche por Leche Deslactosada
         // Finalmente mostrar el precio final de cada uno
         
         
@@ -34,13 +34,13 @@ public class Sistema {
         
         // Producir Helado
         System.out.println("----Creando Helado----");
-        Postre helado_vainilla = new Helado("Vainilla");
+        Postre helado_vainilla = new Helado("Vainilla",7.85);
         System.out.println(helado_vainilla);
         arrPostres.add(helado_vainilla);
        
         // Producir Pastel
         System.out.println("----Creando Pastel----");
-        Postre pastel_chocolate = new Pastel("Chocolate");
+        Postre pastel_chocolate = new Pastel("Chocolate",15.55);
         System.out.println(pastel_chocolate);
         arrPostres.add(pastel_chocolate);
         

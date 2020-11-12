@@ -13,22 +13,17 @@ import Adicionales.Aderezo;
  * @author Pedro Mendoza
  */
 public class Pastel extends Postre{
-    private double precioParcial;
+    private double precio;
     
-       public Pastel(String sabor){
-        super(sabor);
-        this.precioParcial = 15.55;
+       public Pastel(String sabor,double precio){
+        super(sabor,precio);
     }
     
 
 
     @Override
     public String toString() {
-        return "Pastel{" + "sabor=" + super.getSabor() + ", precioParcial=" + precioParcial + ", aderezos=" + super.getAderezos() + '}';
+        return "Pastel{" + "sabor=" + super.getSabor() + ", precioParcial=" + super.getprecioParcial() + ", aderezos=" + super.getAderezos() + '}';
     }
-    
-    public double getprecioParcial(){
-        return precioParcial;
-    }
-    
+	
 }

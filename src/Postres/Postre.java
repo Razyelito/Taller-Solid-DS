@@ -13,10 +13,12 @@ import java.util.ArrayList;
 public abstract class Postre {
     private String sabor;
     private ArrayList<Aderezo> aderezos;
+    protected double precioParcial;
     
-    public Postre(String sabor){
+    public Postre(String sabor,double precio){
         aderezos= new ArrayList<>();
         this.sabor=sabor;
+        precioParcial=precio;
     }
     
       public ArrayList<Aderezo> getAderezos() {
@@ -40,5 +42,7 @@ public abstract class Postre {
         postre.getAderezos().remove(aderezo);
     }
     
-    public abstract double getprecioParcial();
+    public double getprecioParcial(){
+        return this.precioParcial;
+    }
 }

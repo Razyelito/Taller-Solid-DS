@@ -16,27 +16,14 @@ import java.util.ArrayList;
 public class ManejadorDePrecio {
     
     public double calcularPrecioFinal(Postre p){
-        double precioFinal = 0;
-        if(p.getClass() == Pastel.class){
-            precioFinal = (p.getprecioParcial() + (p.getprecioParcial()*0.12)) + (p.getAderezos().size()*0.50);
-            return precioFinal;
-        }
-        else if(p.getClass()==Helado.class){
-            precioFinal = (p.getprecioParcial() + (p.getprecioParcial()*0.12)) + (p.getAderezos().size()*0.50);
-            return precioFinal;
-        }
-    return 0;
+        double precioFinal;
+        precioFinal = (p.getprecioParcial() + (p.getprecioParcial()*0.12)) + (p.getAderezos().size()*0.50);
+        return precioFinal;
     }
     
    
     public String showPrecioFinal(Postre p){
-        if(p.getClass() == Pastel.class){
-            return "Precio Final: $" + calcularPrecioFinal(p);
-        }
-        else if(p.getClass() == Helado.class){
-            return "Precio Final: $" + calcularPrecioFinal(p);
-        }
-        return null;
+        return "Precio Final: $" + calcularPrecioFinal(p);
     }
 
     

@@ -21,7 +21,11 @@ public class ManejadorDeLeche {
         System.out.println(postre.getClass());
         System.out.println(Pastel.class);
         if(postre.getClass() == Pastel.class){
-            leche.usarPastel();
+           if(leche instanceof LecheDeslactosada)
+                System.out.println("No se pudo cambiar el tipo de leche");
+            else{
+                leche.usarPastel();
+            }
         }else{
             leche.usarHelado();
         }
