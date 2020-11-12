@@ -4,8 +4,8 @@ Literal 1: En las clases de Helado y Pastel habría que hacer modificaciones en 
 
 Lieral 2:  la clase OperacionesAderezo realizaba operaciones concretas para las clases Helado y Pastel pero estas operaciones se pueden poner como metodos en la clase Postre.Es decir no se cumple el principio de dependencia
 
-Literal 3: Los metodos calcularPrecioFinal() y showPrecioFinal() deben de estar en otra clase para cumplir con el principio de Abierto Cerrrado OCP. Con esto quiero decir que si existe algun cambio en el calculo, solo se tendria que modificar el metodo en una clase y no en varias como se tenia anteriormente.
+Literal 3: Los metodos calcularPrecioFinal() y showPrecioFinal() deben de estar en otra clase para cumplir con el principio de Abierto Cerrrado OCP. Con esto se quiere decir que si existe algun cambio en el calculo, solo se tendria que modificar el metodo en una clase y no en varias como se tenia anteriormente.La clase padre no se modifica, mas bien, se extiende.
 
-
+Literal 4: Se utiliza la herencia con el fin de no tener la necesidad de cambiar código cada vez que se agreguen nuevas funcionalidades con respecto a la clase Aderezo, es decir, si se agregan nuevos aderezos no se debe cambiar ningún código de la clase padre sino que solo se extiende. Así, sí se estaría cumpliendo con el principio OCP.
 
 Literal 5: Los metodos de las clases LecheDescremada y LecheDeslactosada no se comportan igual debido a que se declara que la Deslactosada no se puede usar en pasteles mientras que en helados si, por ende no cumple con el principio LSP. Debido a ello, se tuvo que crear otra clase "ManejadorDeLeche" en la que se pregunta que tipo de postre es el objeto para asi verificar si se puede cambiar el tipo de leche o no. Asi las dos clases hijas se comportan como su clase Padre, volviendo el codigo mas reusable.
