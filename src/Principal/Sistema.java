@@ -8,6 +8,7 @@ import Adicionales.*;
 import Postres.*;
 import Procesos.*;
 import Leche.*;
+import java.util.ArrayList;
 /**
  *
  * @author djurado
@@ -18,35 +19,46 @@ public class Sistema {
         // a ambos agregarles CREMA y FRUTILLAS
         // y cambiar el tipo de leche por Leche Descremada
         // Finalmente mostrar el precio final de cada uno
-        LecheEntera leche = new LecheDeslactosada();
+        
+        
         ManejadorDeLeche mnj_leche = new ManejadorDeLeche();
+        ManejadorDePrecio mnj_precio = new ManejadorDePrecio();
+        
+        LecheEntera leche = new LecheDeslactosada();
         Frutilla frutilla = new Frutilla();
         frutilla.setNombre("Frutilla");
         Crema crema = new Crema();
         crema.setNombre("Crema");
-        ManejadorDePrecio mnp = new ManejadorDePrecio();
+      
+        ArrayList<Postre> arrPostres = new ArrayList<>();
         
         // Producir Helado
-        Helado helado_vainilla = new Helado("Vainilla");
-        Helado.anadirAderezo(helado_vainilla,crema);
-        Helado.anadirAderezo(helado_vainilla, frutilla);
+        System.out.println("----Creando Helado----");
+        Postre helado_vainilla = new Helado("Vainilla");
         System.out.println(helado_vainilla);
-        mnj_leche.cambiarTipoLeche(leche, helado_vainilla);
-        double pF = mnp.calcularPrecioFinal(helado_vainilla);
-        String mensajePrecio = mnp.showPrecioFinal(helado_vainilla);
-        System.out.println(mensajePrecio);
-        
+        arrPostres.add(helado_vainilla);
+       
         // Producir Pastel
-        Pastel pastel_chocolate = new Pastel("Chocolate");
-        Pastel.quitarAderezo(pastel_chocolate, crema);
-        Pastel.anadirAderezo(pastel_chocolate, frutilla);
+        System.out.println("----Creando Pastel----");
+        Postre pastel_chocolate = new Pastel("Chocolate");
         System.out.println(pastel_chocolate);
-        mnj_leche.cambiarTipoLeche(leche, pastel_chocolate);
-        double pF2 = mnp.calcularPrecioFinal(pastel_chocolate);
-        String mensajePrecio2 = mnp.showPrecioFinal(pastel_chocolate);
-        System.out.println(mensajePrecio2);
+        arrPostres.add(pastel_chocolate);
         
-        
-        
+        arrPostres.forEach(postre -> {
+            if(postre instanceof Helado){
+                System.out.println("----Añadiendo aderezos a Helado de "+postre.getSabor()+",cambiando leche"
+                                    +" y mostrando su precio final----");
+            }else if(postre instanceof Pastel){
+                 System.out.println("----Añadiendo aderezo a Pastel de "+postre.getSabor()+ ", cambiando leche"
+                         + " y mostrando su precio final----");
+            }
+            postre.anadirAderezo(postre,crema);
+            postre.anadirAderezo(postre,frutilla);
+            System.out.println(postre);
+            mnj_leche.cambiarTipoLeche(leche,postre);
+            System.out.println(mnj_precio.showPrecioFinal(postre));
+            
+        });        
+
     }
 }

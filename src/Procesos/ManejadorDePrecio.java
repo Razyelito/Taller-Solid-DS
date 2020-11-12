@@ -31,11 +31,9 @@ public class ManejadorDePrecio {
    
     public String showPrecioFinal(Postre p){
         if(p.getClass() == Pastel.class){
-            System.out.println(calcularPrecioFinal(p));
             return "Precio Final: $" + calcularPrecioFinal(p);
         }
         else if(p.getClass() == Helado.class){
-            System.out.println(calcularPrecioFinal(p));
             return "Precio Final: $" + calcularPrecioFinal(p);
         }
         return null;
